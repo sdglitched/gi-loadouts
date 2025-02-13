@@ -44,6 +44,7 @@ from test import verify_accuracy
         pytest.param("Skyward Spine", 5, 3, "Level 80/90 (Rank 6)", 621, WeaponStatType.energy_recharge_perc, 33.5, id="data.weap.polearms: Skyward Spine"),
         pytest.param("Wavebreaker's Fin", 4, 4, "Level 80/90 (Rank 6)", 571, WeaponStatType.attack_perc, 12.5, id="data.weap.polearms: Wavebreaker's Fin"),
         pytest.param("Calamity Queller", 5, 4, "Level 80/90 (Rank 6)", 679, WeaponStatType.attack_perc, 15.1, id="data.weap.polearms: Calamity Queller"),
+        pytest.param("Tamayuratei no Ohanashi", 4, 3, "Level 80/90 (Rank 6)", 523, WeaponStatType.energy_recharge_perc, 27.9, id="data.weap.polearms: Tamayuratei no Ohanashi"),
     ]
 )
 def test_polearm(name: str, rare: int, tier: int, levl: str, batk: int, seco: WeaponStatType, valu: float) -> None:
