@@ -159,8 +159,9 @@ class Char(BaseModel):
         :param stat_type: Type of the stat (STAT.attack, STAT.defense, or STAT.health_points).
         :return: ATTR instance with calculated stat value.
         """
+        mult_key = "atk" if stat_type == STAT.attack else "hp_def"
         stat_data = (
-            base_stat * Mult[self.levl.value.qant][self.rare]
+            base_stat * Mult[self.levl.value.qant][self.rare][mult_key]
             + Secs[self.levl.value.rank] * ascension_stat
         )
 
@@ -223,8 +224,9 @@ class MainChar(Char):
         :param stat_type: Type of the stat (STAT.attack, STAT.defense, or STAT.health_points).
         :return: ATTR instance with calculated stat value.
         """
+        mult_key = "atk" if stat_type == STAT.attack else "hp_def"
         stat_data = (
-            base_stat * Mult[self.levl.value.qant][Rare.Star_4]
+            base_stat * Mult[self.levl.value.qant][Rare.Star_4][mult_key]
             + Secs[self.levl.value.rank] * ascension_stat
         )
 
